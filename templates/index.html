@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ name }}'s Academic Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar is-light">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+            {{ name }}
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-end">
+            <a class="navbar-item" href="#about">About</a>
+            <a class="navbar-item" href="#research">Research</a>
+            <a class="navbar-item" href="#publications">Publications</a>
+            <a class="navbar-item" href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Main content -->
+<section class="section">
+    <div class="container">
+        <h1 class="title">{{ name }}</h1>
+        <p class="subtitle">{{ title }}</p>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="title is-4">About Me</h2>
+            <p>{{ about }}</p>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research">
+            <h2 class="title is-4">Research Interests</h2>
+            <ul>
+                {% for interest in research_interests %}
+                <li>{{ interest }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2 class="title is-4">Publications</h2>
+            <ul>
+                {% for publication in publications %}
+                <li>{{ publication }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="title is-4">Contact</h2>
+            <p>Email: <a href="mailto:{{ email }}">{{ email }}</a></p>
+            <p>Location: {{ location }}</p>
+        </section>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            &copy; {{ year }} {{ name }}. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<script src="bundle.js"></script>
+</body>
+</html>
