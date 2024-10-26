@@ -12,8 +12,8 @@ module.exports = {
     }, plugins: [new MiniCssExtractPlugin({
         filename: 'styles.css',
     }),], optimization: {
-        minimizer: [`...`,  // 继承 Webpack 默认的 JS 压缩器
-            new CssMinimizerPlugin(),  // 压缩 CSS
+        minimizer: [`...`,
+            new CssMinimizerPlugin(),
         ],
     },
 };
