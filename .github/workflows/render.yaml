@@ -13,14 +13,17 @@ jobs:
           TZ: 'Asia/Tokyo'
         run:
           echo $(date +'%Y-%m-%d %H:%M:%S')
+
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm install
-      - run: npm run build
       - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+
+      - run:
+          npm install
+          npm run build
       - run:
           python3 -m pip install pip setuptools --upgrade
           python3 -m pip install -r requirements.txt
